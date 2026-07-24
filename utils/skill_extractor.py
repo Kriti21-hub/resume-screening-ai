@@ -1,11 +1,25 @@
-from utils.skill_extractor import extract_skills
-st.text(text)
-st.subheader("Skills Found")
+skills = [
+    "Python",
+    "SQL",
+    "Machine Learning",
+    "Deep Learning",
+    "NumPy",
+    "Pandas",
+    "Scikit-learn",
+    "TensorFlow",
+    "PyTorch",
+    "Git",
+    "GitHub",
+    "Docker",
+    "FastAPI",
+    "Data Visualization"
+]
 
-skills = extract_skills(text)
+def extract_skills(text):
+    found_skills = []
 
-if skills:
     for skill in skills:
-        st.success(skill)
-else:
-    st.warning("No skills found.")
+        if skill.lower() in text.lower():
+            found_skills.append(skill)
+
+    return found_skills
