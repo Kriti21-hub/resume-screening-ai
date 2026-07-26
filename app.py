@@ -5,6 +5,7 @@ import plotly.express as px
 from utils.feedback import generate_feedback
 from utils.skill_extractor import extract_skills
 from utils.similarity import calculate_score
+from utils.pdf_generator import generate_pdf
 
 
 # --------------------------------------------------
@@ -211,3 +212,17 @@ if resume:
         )
 
         st.text(feedback)
+
+        pdf = generate_pdf(
+            score,
+            matched_skills,
+            missing_skills,
+            feedback
+        )
+
+        st.download_button(
+            label="📄 Download ATS Report",
+            data=pdf,
+            file_name="ATS_Report.pdf",
+            mime="application/pdf"
+        )
