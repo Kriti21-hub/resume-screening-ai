@@ -99,7 +99,6 @@ streamlit run app.py
 
 ## 🔮 Future Improvements
 
-- Export ATS Report as PDF
 - Resume Ranking
 - Multiple Resume Comparison
 - AI-based Resume Recommendations
